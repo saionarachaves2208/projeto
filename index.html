@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InnoHelmet — Capacetes Inovadores (Site acessível)</title>
+    <link rel="stylesheet" href="cap.css">
+</head>
+<body>
+  <!-- Link de pular para acessibilidade -->
+<div class="accessibility-p1">
+  <a class="skip-link" href="#main-content">Pular para o conteúdo principal</a>
+
+  <!-- Região de ajuda -->
+  <div role="region" aria-label="Barra de utilidades" class="top-utilities">
+    <p class="visually-hidden" aria-hidden="false">Você está no site InnoHelmet. Use a tecla Tab para navegar.</p>
+    <div class="utility-links">
+      <a href="#acessibilidade" aria-describedby="acessibilidade-desc">Recursos de acessibilidade</a>
+      <span id="acessibilidade-desc" class="visually-hidden">Informações sobre opções para pessoas com deficiência</span>
+    </div>
+  </div>
+</div>
+
+  <!-- Navegação principal -->
+    <nav role="navigation" aria-label="Navegação principal" class="main-nav">
+    <ul>
+      <li><a href="#destaque">Início</a></li>
+      <li><a href="#produtos">Produtos</a></li>
+      <li><a href="#beneficios">Benefícios</a></li>
+      <li><a href="#depoimentos">Depoimentos</a></li>
+      <li><a href="#contato">Comprar</a></li>
+    </ul>
+  </nav>
+
+
+  <!-- Cabeçalho com busca e navegação principal -->
+  <header role="banner" class="site-header" aria-label="Cabeçalho principal">
+    <div class="header-inner">
+      <div class="branding">
+        <a href="#main-content" class="logo" aria-label="InnoHelmet — página inicial"><img src="logo.webp" alt="Logo InnoHelmet"></a>
+      </div>
+
+      <!-- Busca -->
+    <form class="search-form" action="/buscar" method="get">
+      <input type="search" id="search" name="q" placeholder="Buscar capacetes, acessórios, modelos..."
+      aria-label="Campo de busca de produtos" size="50"/>
+      <button type="submit" aria-label="Pesquisar" class="btn-p1">Pesquisar</button>
+    </form>
+
+      <div class="header-actions">
+        <a href="carrinho.html" aria-controls="cart-status" aria-describedby="cart-desc"><img src="carrinho.png" alt="Carrinho"></a>
+        <span id="cart-desc" class="visually-hidden">Atualizações do carrinho aparecem na região de status do carrinho</span>
+      </div>
+    </div>
+  </header>
+  
+  <!-- Região que anuncia mudanças no carrinho (aria-live) -->
+  <div id="cart-status" aria-live="polite" aria-atomic="true" class="cart-status">
+    <!-- scripts podem atualizar este conteúdo dinamicamente -->
+  </div>
+
+  <main id="main-content" role="main" class="site-main">
+    <!-- HERO / Destaque principal -->
+    <section id="destaque" class="hero" aria-labelledby="hero-title">
+      <div class="hero-left">
+        <img src="city.png" alt="HOMEM USANDO CAPACETE">
+
+        <div class="texto-hero">
+        <h1 id="hero-title"><strong>InnoHelmet — Capacetes Inteligentes</strong></h1>
+        <p class="tagline">Segurança, conforto e tecnologia integrados — escolha o modelo ideal para você.</p>
+          <br>
+        <p class="hero-ctas">
+          <a href="#produtos" class="cta primary">Ver modelos</a>
+          <a href="#contato" class="cta secondary">Fazer pedido</a>
+        </p>
+        <br>
+        <br>
+        <br>
+        <div class="box-features">
+        <ul class="quick-features" aria-label="Principais características">
+          <li><strong>Visor AR</strong> — direções e notificações no campo de visão.</li>
+          <br>
+          <li><strong>Sensores biométricos</strong> — monitoramento em tempo real.</li>
+          <br>
+          <li><strong>Alerta de queda</strong> — notifica contatos automaticamente.</li>
+        </ul>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <!-- Produtos: Grid acessível -->
+    <section id="produtos" class="produtos" aria-labelledby="produtos-title">
+      <div class="produtos-header">
+      <h2 id="produtos-title">Modelos em destaque</h2>
+      <p class="sr-only" id="produtos-desc">Lista de produtos — cada cartão inclui título, descrição, preço, avaliação e ações. Use Tab para navegar até os botões de ação.</p>
+      </div>
+
+      <ul class="product-list" role="list" aria-describedby="produtos-desc">
+        <!-- Produto 1 -->
+        <li class="product-item" role="listitem" aria-labelledby="p1-title" aria-describedby="p1-desc">
+          <article class="product" aria-label="InnoHelmet Pro — topo de linha">
+            <div class="product-p1">
+            <img src="Pro.png" alt="InnoHelmet Pro — capacete preto com visor integrado e sensores" />
+            <div class="texto-pro">
+            <h3 id="p1-title">InnoHelmet Pro</h3>
+            <p id="p1-desc">Modelo top com AR avançada, sensores biométricos e bateria de longa duração.</p>
+            <p class="price" aria-label="Preço: R$ 1.999,00">R$ 1.999,00</p>
+            <p class="rating" aria-label="Avaliação: 4 de 5 estrelas">⭐️⭐️⭐️⭐️☆ (4.0)</p>
+
+            <div class="product-actions" role="group" aria-label="Ações do produto InnoHelmet Pro">
+              <!-- botões com foco visível via CSS -->
+              <button type="button" aria-pressed="false">Adicionar ao carrinho</button>
+              <a href="#contato" class="btn-buy">Comprar agora</a>
+              <a href="#detalhes-p1" aria-controls="detalhes-p1" aria-expanded="false" class="more-info">Mais detalhes</a>
+            </div>
+            </div>
+            </div>
+
+            <!-- detalhes expandidos (visíveis quando JS ativa) -->
+            <div id="detalhes-p1" class="product-details" hidden>
+              <h4>Especificações</h4>
+              <ul>
+                <li>AR: navegação e notificações</li>
+                <li>Sensores: batimentos, impacto, aceleração</li>
+                <li>Conectividade: Bluetooth 5.2</li>
+              </ul>
+            </div>
+          </article>
+        </li>
+        <br>
+        <br>
+        <!-- Produto 2 -->
+        <li class="product-item" role="listitem" aria-labelledby="p2-title" aria-describedby="p2-desc">
+          <article class="product" aria-label="InnoHelmet Lite — modelo urbano leve">
+            <div class="product-p2">
+            <img src="Lite.png" alt="InnoHelmet Lite — capacete branco compacto" />
+            <div class="texto-lite">
+            <h3 id="p2-title">InnoHelmet Lite</h3>
+            <p id="p2-desc">Leve, bom para uso diário na cidade. Visor antiembaçante e conectividade básica.</p>
+            <p class="price" aria-label="Preço: R$ 899,00">R$ 899,00</p>
+            <p class="rating" aria-label="Avaliação: 4.1 de 5">⭐️⭐️⭐️⭐️☆ (4.1)</p>
+              </div>
+            <div class="product-actions" role="group" aria-label="Ações do InnoHelmet Lite">
+              <button type="button">Adicionar ao carrinho</button>
+              <a href="#contato" class="btn-buy">Comprar agora</a>
+              </div>
+            </div>
+          </article>
+        </li>
+        <br>
+        <br>
+        <!-- Produto 3 -->
+        <li class="product-item" role="listitem" aria-labelledby="p3-title" aria-describedby="p3-desc">
+          <article class="product" aria-label="InnoHelmet Sport — ventilação e performance">
+            <div class="product-p3">
+            <img src="Sport.png" alt="InnoHelmet Sport — capacete vermelho com muitas aberturas de ventilação" />
+            <div class="texto-sport">
+            <h3 id="p3-title">InnoHelmet Sport</h3>
+            <p id="p3-desc">Focado em desempenho com ótima ventilação, microfone e redução de ruído.</p>
+            <p class="price" aria-label="Preço: R$ 1.299,00">R$ 1.299,00</p>
+            <p class="rating" aria-label="Avaliação: 4.2 de 5">⭐️⭐️⭐️⭐️☆ (4.2)</p>
+              </div>
+            <div class="product-actions" role="group" aria-label="Ações do InnoHelmet Sport">
+              <button type="button">Adicionar ao carrinho</button>
+              <a href="#contato" class="btn-buy">Comprar agora</a>
+            </div>
+            </div>
+          </article>
+        </li>
+        <br>
+        <br>
+        <!-- Produto 4 -->
+        <li class="product-item" role="listitem" aria-labelledby="p4-title" aria-describedby="p4-desc">
+          <article class="product" aria-label="InnoHelmet Urban — câmeras integradas">
+            <div class="product-p4">
+            <img src="urban.png" alt="InnoHelmet Urban — capacete cinza com câmera integrada" />
+            <div class="texto-urban">
+            <h3 id="p4-title">InnoHelmet Urban</h3>
+            <p id="p4-desc">Compacto, com câmeras externas e integração com app para maior visibilidade.</p>
+            <p class="price" aria-label="Preço: R$ 1.149,00">R$ 1.149,00</p>
+            <p class="rating" aria-label="Avaliação: 4.0 de 5">⭐️⭐️⭐️⭐️☆ (4.0)</p>
+              </div>
+            <div class="product-actions" role="group" aria-label="Ações do InnoHelmet Urban">
+              <button type="button">Adicionar ao carrinho</button>
+              <a href="#contato" class="btn-buy">Comprar agora</a>
+            </div>
+            </div>
+          </article>
+        </li>
+      </ul>
+    </section>
+    <br>
+    <!-- Benefícios explicados -->
+    <section id="beneficios" class="beneficios" aria-labelledby="beneficios-title">
+      <h2 id="beneficios-title">Por que escolher InnoHelmet?</h2>
+      <br>
+      <ul>
+        <li><strong>Segurança:</strong> materiais certificados e sensores de impacto.</li>
+        <br>
+        <li><strong>Conectividade:</strong> chamadas e música sem tirar as mãos do guidão.</li>
+        <br>
+        <li><strong>Assistência:</strong> alerta automático em caso de queda (opcional).</li>
+        <br>
+        <li><strong>Conforto:</strong> ajuste ergonômico e ventilação otimizada.</li>
+        <br>
+        <li><strong>Acessibilidade:</strong> interface do app com modos de alto contraste e leitura por voz.</li>
+      </ul>
+    </section>
+    <br>
+    <br>
+
+    <!-- Depoimentos com rotação opcional -->
+    <section id="depoimentos" class="depoimentos" aria-labelledby="depoimentos-title">
+      <h2 id="depoimentos-title">Depoimentos</h2>
+
+      <div class="testimonial" role="region" aria-live="polite" aria-label="Depoimentos de clientes">
+        <article aria-labelledby="t1-name">
+          <div class="carlos">
+          <img src="Carlos M..jpeg" alt="Avaliação Carlos M.">
+          <br>
+          <h3 id="t1-name">Carlos M.</h3>
+          <p>"O InnoHelmet Pro me deu mais confiança nas minhas rotas. O visor é demais!"</p>
+          </div>
+        </article>
+
+        <article aria-labelledby="t2-name">
+          <div class="ana">
+          <img src="Ana S.png" alt="Avaliação Ana S.">
+          <h3 id="t2-name">Ana S.</h3>
+          <p>"O monitor cardíaco já me avisou quando eu estava exagerando no treino. Recomendo!"</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Seção de Acessibilidade: instruções e opções -->
+    <section id="acessibilidade" class="accessibility" aria-labelledby="acess-title">
+      <div class="acessibilidade-r">
+      <h2 id="acess-title">Recursos de acessibilidade</h2>
+      <p>Informações e opções para melhorar a experiência de pessoas com deficiência:</p>
+      <ul>
+        <li><strong>Leitores de tela:</strong> todas as imagens têm texto alternativo descritivo; navegação por títulos está organizada.</li>
+        <li><strong>Modo alto contraste:</strong> opção no site para melhorar leitura.</li>
+        <li class="visually-hidden"><strong>Ajuste de tamanho de fonte:</strong> controles para aumentar texto (implementar via CSS/JS).</li>
+        <li><strong>Atalhos de teclado:</strong> link de pular conteúdo e foco visível em todos os controles.</li>
+        <li><strong>Legendas e transcrições:</strong> vídeos e áudios terão legendas e transcrições (quando houver).</li>
+      </ul>
+      <p class="note">Se precisar de ajuda para completar o pedido, ligue para nossa linha fictícia de suporte acessível: <a href="tel:+550000000000">+55 (11) 98059-8414 </a></p>
+      </div>
+    </section>
+
+    <!-- Formulário de pedido — acessível -->
+    <section id="contato" class="contato" aria-labelledby="contato-title">
+      <div class="cont">
+      <h2 id="contato-title">Formulário de pedido / interesse</h2>
+      <p>Preencha os dados e nossa equipe entra em contato (fictício).</p>
+
+      <form action="https://formsubmit.co/innohelmet@gmail.com" method="POST" class="order-form" aria-describedby="form-desc" novalidate>
+        <p id="form-desc" class="visually-hidden">Campos obrigatórios marcados com asterisco.</p>
+        <div class="cont-1">
+          <label for="modelo">Modelo de interesse</label>
+        <select id="modelo" name="modelo">
+          <option value="pro">InnoHelmet Pro</option>
+          <option value="lite">InnoHelmet Lite</option>
+          <option value="sport">InnoHelmet Sport</option>
+          <option value="urban">InnoHelmet Urban</option>
+        </select required>
+        </div>
+
+        <label for="quantidade">Quantidade</label>
+        <input id="quantidade" name="quantidade" type="number" min="1" value="1" required/>
+        <br> 
+        <label for="nome">Nome Completo <span aria-hidden="true">*</span></label>
+        <input id="nome" name="nome" type="text" required aria-required="true" /> <br> 
+
+        <label for="email">E-mail <span aria-hidden="true">*</span></label>
+        <input id="email" name="email" type="email" required aria-required="true" />
+        <br>
+        <label for="telefone">Telefone (opcional)</label>
+        <input id="telefone" name="telefone" type="tel" inputmode="tel" />
+        <br>
+        <label for="endereco">Endereço para entrega <span aria-hidden="true">*</span></label>
+        <input id="endereco" name="endereco" type="text" required aria-required="true" />
+        <br> 
+        <label for="observacoes">Observações (por ex.: ajustes para uso com prótese, preferência de contato)</label>
+        <br> 
+        <textarea id="observacoes" name="observacoes" rows="4"></textarea>
+        <br>
+
+        <fieldset class="cont-2" >
+          <legend>Forma de contato preferida</legend>
+          <label><input type="radio" name="contato_pref" value="email" checked /> E-mail</label>
+          <label><input type="radio" name="contato_pref" value="telefone" /> Telefone</label>
+        </fieldset>
+        <br>
+        <label>
+          Concordo em receber informações fictícias sobre o pedido.
+           <input type="checkbox" name="aceito" required aria-required="true"/>
+        </label>
+
+        <button type="submit">Enviar pedido</button>
+      </form>
+      </div>
+
+      <!-- Final -->
+    </section>
+    <div class="last-main">
+    <h2>Compre e retire em 4h!</h2>
+    <p>após o recebimento da nota fiscal no e-mail</p>
+    <p>Rua: Dr. Plínio Barreto, 285 - Bela Vista
+        São Paulo - SP, 01313-020</p>
+    <p>Segunda a sexta: 10h às 19h | Sábado: 10h às 16h</p>
+    <p>WhatsApp: (11) 98059-8414 </p>
+    </div>
+  </main>
+
+  <footer role="contentinfo" class="site-footer" aria-label="Rodapé">
+      <div class="redes">
+          <a href="https://www.instagram.com/innohelmet/" target="_blank" aria-label="Ir para Instagram do InnoHelmet"><img src="instagram.png" alt="instagram"></a>
+          <a href="https://www.facebook.com/profile.php?id=61581026142498" target="_blank" aria-label="Ir para Facebook do InnoHelmet"><img src="facebook.png" alt="facebook"></a>
+          <a href="https://x.com/HelmetInno37783" target="_blank" aria-label="Ir para Twitter do InnoHelmet"><img src="twitter.png" alt="twitter"></a>
+        </div>
+      
+        <div class="politcs">
+      <nav aria-label="Links úteis">
+        <ul>
+          <li><a href="#politica-privacidade">Política de privacidade</a></li>
+          <li><a href="#termos">Termos de uso</a></li>
+          <li><a href="#acessibilidade">Acessibilidade</a></li>
+        </ul>
+      </nav>
+    </div>
+  <br>
+     <!-- Rodapé com informações e navegação secundária -->
+    <div class="footer-inner">
+      <p>&copy; 2025 InnoHelmet — Loja fictícia. Conteúdo ilustrativo.</p>
+      </div>
+    </footer>
+</body>
+</html>
